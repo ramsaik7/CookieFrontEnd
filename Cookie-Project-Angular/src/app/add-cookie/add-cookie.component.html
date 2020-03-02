@@ -1,0 +1,72 @@
+
+<div class="box">
+    
+        <div style="height: 50%;" style="width: 50%" style="margin-left: 5%">
+        <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+            <button type="button" class="btn btn-block btn-dark">
+                <h4>Add-Cookie</h4>
+            </button>
+        
+            <br>
+        
+        
+            <div class="form-group">
+                <mat-form-field>
+                <mat-label>Select a Cafe</mat-label>
+                <mat-select  formControlName="cafe">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let cafe of response" [value]="cafe.cafe">{{cafe.cafeName}}</mat-option>
+                </mat-select>
+                </mat-form-field>
+            </div>
+
+                   
+           
+        
+            <div class="form-group">
+                    <!-- <label>Email</label> -->
+                    <!-- <input type="text" class="form-control" placeholder="Email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" id="Email" name="Name"> -->
+                    <mat-form-field style="width: 100%" appearance="outline">
+                        <mat-label>Enter CookieName</mat-label>
+                        <input matInput placeholder="Enter Cookie Name" formControlName="cookieName">
+                        <mat-error *ngIf="f.cookieName.invalid">
+                            Enter a valid
+                            <strong>Cookie Name</strong>
+                        </mat-error>
+                        <!-- <mat-icon matSuffix></mat-icon> -->
+                    </mat-form-field>
+            
+                </div>
+  
+                <div class="form-group">
+                        <!-- <label>Email</label> -->
+                        <!-- <input type="text" class="form-control" placeholder="Email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" id="Email" name="Name"> -->
+                        <mat-form-field style="width: 100%" appearance="outline">
+                            <mat-label>Enter Cookie Price</mat-label>
+                            <input matInput placeholder="Enter Cookie Price" formControlName="price">
+                            <mat-error *ngIf="f.price.invalid">
+                                Enter a valid
+                                <strong>Price</strong>
+                            </mat-error>
+                            <!-- <mat-icon matSuffix></mat-icon> -->
+                        </mat-form-field>
+                
+                    </div>
+               
+
+            
+            <div class="row">
+                <div class="col-6">
+                    <button style="width: 60%" type="submit"  class="btn btn-success">AddCookie</button>
+                </div>
+            </div>
+        
+        </form>
+        
+        </div>
+        
+        </div>
+
+        
+        
+

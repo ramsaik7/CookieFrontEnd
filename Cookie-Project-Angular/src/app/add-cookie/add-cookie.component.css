@@ -1,0 +1,13 @@
+.box{
+    position: relative;
+    width: 50%;
+    height: 50%;
+    margin-left: 20%;
+    margin-top: 6%;
+    
+}
+
+
+body{
+    background-color: aqua;
+}

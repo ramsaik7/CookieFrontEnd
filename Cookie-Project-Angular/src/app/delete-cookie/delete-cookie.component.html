@@ -1,0 +1,67 @@
+
+<div class="box">
+
+        <div style="height: 50%;" style="width: 50%" style="margin-left: 5%">
+        <form [formGroup]="deleteForm" (ngSubmit)="onSubmit()">
+            <button type="button" class="btn btn-block btn-dark">
+                <h4>Delete-Cookie</h4>
+            </button>
+        
+            <br>
+        
+        
+            <!-- <div class="form-group">
+                <mat-form-field>
+                <mat-label>Select a Cafe</mat-label>
+                <mat-select formControlName="cafe" (change)="onChangeCookie($event.target.value)">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let cafe of cookieResponse;let i=index" value="{{i}}">{{this.cafe.cafeName}}</mat-option>
+                
+                </mat-select>
+                </mat-form-field>
+            </div>
+        
+            
+            <div class="form-group">
+                    <mat-form-field>
+                    <mat-label>Select a Cookie</mat-label>
+                    <mat-select  formControlName="cookie">
+                    <mat-option>None</mat-option>
+
+                    <mat-option *ngFor="let cookie1 of cookieResp;let k=index" value="{{k}}">{{this.cookie1.cookieName}}</mat-option>
+                    </mat-select>
+                    </mat-form-field>
+                </div> -->
+            
+           
+                <div class="form-group">
+                        <label>Select Cafe*</label>
+                        <select class="form-control" (change)="onChangeCookie($event.target.value)" formControlName="cafe">
+                             <!-- <option *ngIf="stateResponse == ''" value="-1">--Select State--</option> -->
+                          <option *ngFor="let cafe of cookieResponse; let i = index" value="{{i}}">{{this.cafe.cafeName}}</option>
+                        </select>  
+                    </div>
+                
+                
+                    <div class="form-group">
+                            <label>Select Cookie*</label>
+                            <select class="form-control" formControlName="cookie">
+                                 <!-- <option *ngIf="cityInfo == ''" value="-1">--Select CIty--</option> -->
+                              <option *ngFor="let cookie1 of cookieResp; let k = index" value="{{this.cookie1.cookieId}}">{{this.cookie1.cookieName}}</option>
+                            </select>  
+                        </div>
+
+
+
+            <div class="row">
+                <div class="col-6">
+                    <button style="width: 60%" type="submit"  class="btn btn-success">DeleteCookie</button>
+                </div>
+            </div>
+        
+        </form>
+        
+        </div>
+        
+        </div>
+        
