@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/contact-details.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/logo.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    $('#recipeCarousel').carousel({
+interval: 10000
+})
+
+$('.carousel .carousel-item').each(function(){
+var minPerSlide = 3;
+var next = $(this).next();
+if (!next.length) {
+next = $(this).siblings(':first');
+}
+next.children(':first-child').clone().appendTo($(this));
+
+for (var i=0;i<minPerSlide;i++) {
+    next=next.next();
+    if (!next.length) {
+      next = $(this).siblings(':first');
+    }
+    
+    next.children(':first-child').clone().appendTo($(this));
+  }
+});
+
+</script>
+
+  <style>
+    
+    *{
+      box-sizing: border-box;
+    }
+    .lower{
+      padding:3%;
+      width:25%;
+    }
+    @media screen and (max-width: 600px) {
+      .lower {   
+        width:100%;
+        padding-left: 5%;
+      }
+    }
+    .row {  
+      display: -ms-flexbox; /* IE10 */
+      display: flex;
+      -ms-flex-wrap: wrap; /* IE10 */
+      flex-wrap: wrap;
+
+
+      background-image: url("assets/background.jpg");
+      background-position: top; /* Center the image */
+      background-repeat: no-repeat; /* Do not repeat the image */
+      background-size: cover; /* Resize the background image to cover the entire container */
+      height:fit-content /* You must set a specified height */
+    }
+    
+ 
+    @media screen and (max-width: 700px) {
+      .row {   
+        flex-direction: column;
+      }
+    }
+    @media screen and (max-width: 700px) {
+    .mar-div{
+      max-width: 80%;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .content{
+      max-width: 100% !important;
+    }
+  }
+
+    /* Make the image fully responsive */
+    .carousel-inner img {
+      width: 55%;
+      height: 35%;
+     
+    }
+    [class*="col-"] {
+      float: left;
+      padding: 15px;
+    }
+    /* For mobile phones: */
+    [class*="col-"] {
+     width: 100%;
+    }
+
+   @media only screen and (min-width: 600px) {
+    /* For tablets: */
+     .col-s-1 {width: 8.33%;}
+     .col-s-2 {width: 16.66%;}
+     .col-s-3 {width: 25%;}
+     .col-s-4 {width: 33.33%;}
+     .col-s-5 {width: 41.66%;}
+     .col-s-6 {width: 50%;}
+     .col-s-7 {width: 58.33%;}
+     .col-s-8 {width: 66.66%;}
+     .col-s-9 {width: 75%;}
+     .col-s-10 {width: 83.33%;}
+     .col-s-11 {width: 91.66%;}
+     .col-s-12 {width: 100%;}
+    }
+   @media only screen and (min-width: 768px) {
+     /* For desktop: */
+     .col-1 {width: 8.33%;}
+     .col-2 {width: 16.66%;}
+     .col-3 {width: 25%;}
+     .col-4 {width: 33.33%;}
+     .col-5 {width: 41.66%;}
+     .col-6 {width: 50%;}
+     .col-7 {width: 58.33%;}
+     .col-8 {width: 66.66%;}
+     .col-9 {width: 75%;}
+     .col-10 {width: 83.33%;}
+     .col-11 {width: 91.66%;}
+     .col-12 {width: 100%;}
+    }
+
+    .bg-green1{
+
+      background-color: rgb(190, 238, 102);
+    }
+    
+   
+    @media (max-width: 768px) {
+    .carousel-inner .carousel-item > div {
+        display: none;
+    }
+    .carousel-inner .carousel-item > div:first-child {
+        display: block;
+    }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+/* display 3 */
+@media (min-width: 768px) {
+    
+    .carousel-inner .carousel-item-right.active,
+    .carousel-inner .carousel-item-next {
+      transform: translateX(33.333%);
+    }
+    
+    .carousel-inner .carousel-item-left.active, 
+    .carousel-inner .carousel-item-prev {
+      transform: translateX(-33.333%);
+    }
+}
+
+.carousel-inner .carousel-item-right,
+.carousel-inner .carousel-item-left{ 
+  transform: translateX(0);
+}
+
+    </style>
+    
+  </style>
+</head>
+<body>
+  <div class="col-12 col-s-12 contact-details" >
+    <div style="display:flex;"> <i class="fa fa-phone" style="font-size:24px"></i><h5> +91-9437053607,+91-9937072198 | </h5></div>
+   <div style="display:flex;"><i class="material-icons" style="font-size:24px">email</i><h5> hscsbp@gmail.com </h5>   </div>
+    
+  </div>
+
+
+  <div class="col-12 col-s-12 logo" >
+      <div style="padding-left: 2%;">
+        <img src="assets/Logo.png" alt="logo" width="130px" height="80px">
+      </div>  
+      <div style="padding: 2%;">
+        <i style="font-size:24px;" class="fa">&#xf082;</i>
+        <i style="font-size:24px;color:crimson" class="fa">&#xf16d;</i>
+      </div> 
+  </div>
+
+
+  <div class="navbar">
+    <a href="agri.html" class="active">Home</a>
+    <a href="product.html">Products</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="videos.html">Videos</a>
+    <a href="aboutus.html">About Us</a>
+  </div>
+
+   
+
+
+  <div class="bg-green1" >
+
+    <hr class="my-4">
+
+    <!--Carousel Wrapper-->
+    <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+      <!--Controls-->
+      <div class="controls-top">
+        <a style="margin-left: 2%;" class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+        <a style="margin-left: 97%;"class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+      </div>
+      <!--/.Controls-->
+
+      <!--Indicators-->
+
+      
+    <ol   class="carousel-indicators">
+      <li  data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+      <li data-target="#multi-item-example" data-slide-to="1"></li>
+      <li data-target="#multi-item-example" data-slide-to="2"></li>
+    </ol>
+
+   
+      <!--/.Indicators-->
+
+      <!--Slides-->
+      <div class="carousel-inner" role="listbox">
+
+        <!--First slide-->
+        <div class="carousel-item active">
+
+          <div class="row1">
+            <div class="col-md-4">
+              <!-- <div class="card mb-2"> -->
+                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg"
+                  alt="Card image cap">
+                <!-- <div class="card-body">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                  <a class="btn btn-primary">Button</a>
+                </div> -->
+              <!-- </div> -->
+            </div>
+
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <!-- <div class="card mb-2"> -->
+                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
+                  alt="Card image cap">
+                <!-- <div class="card-body">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                  <a class="btn btn-primary">Button</a>
+                </div> -->
+              <!-- </div> -->
+            </div>
+
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <!-- <div class="card mb-2"> -->
+                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg"
+                  alt="Card image cap">
+                <!-- <div class="card-body">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                  <a class="btn btn-primary">Button</a>
+                </div> -->
+              <!-- </div> -->
+            </div>
+          </div>
+
+        </div>
+        <!--/.First slide-->
+
+        <!--Second slide-->
+        <div class="carousel-item">
+
+          <div class="row1">
+            <div class="col-md-4">
+              <!-- <div class="card mb-2"> -->
+                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg"
+                  alt="Card image cap">
+                <!-- <div class="card-body">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                  <a class="btn btn-primary">Button</a>
+                </div> -->
+              <!-- </div> -->
+            </div>
+
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <!-- <div class="card mb-2"> -->
+                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg"
+                  alt="Card image cap">
+                <!-- <div class="card-body">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                  <a class="btn btn-primary">Button</a>
+                </div> -->
+              <!-- </div> -->
+            </div>
+
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <!-- <div class="card mb-2"> -->
+                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg"
+                  alt="Card image cap">
+                <!-- <div class="card-body">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                  <a class="btn btn-primary">Button</a>
+                </div> -->
+              <!-- </div> -->
+            </div>
+          </div>
+
+        </div>
+        <!--/.Second slide-->
+
+        <!--Third slide-->
+        <div class="carousel-item">
+
+          <div class="row1">
+            <div class="col-md-4">
+              <!-- <div class="card mb-2"> -->
+                <img class="card-img-top"  src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg"
+                  alt="Card image cap">
+                <!-- <div class="card-body">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                  <a class="btn btn-primary">Button</a>
+                </div> -->
+              <!-- </div> -->
+            </div>
+
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <!-- <div class="card mb-2"> -->
+                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg"
+                  alt="Card image cap">
+                <!-- <div class="card-body">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                  <a class="btn btn-primary">Button</a>
+                </div> -->
+              <!-- </div> -->
+            </div>
+
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <!-- <div class="card mb-2"> -->
+                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg"
+                  alt="Card image cap">
+                <!-- <div class="card-body">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                  <a class="btn btn-primary">Button</a>
+                </div> -->
+              <!-- </div> -->
+            </div>
+          </div>
+
+        </div>
+        <!--/.Third slide-->
+
+      </div>
+      <!--/.Slides-->
+
+    </div>
+    <!--/.Carousel Wrapper-->
+
+
+  </div>
+
+
+
+
+
+
+
+
+  <div class="col-12 row" style="display: flex;padding: 2%;">
+    <div  class="lower ">
+      <!-- <img src="assets/1592899063_6b9HRz_GeM_1.jpg" alt="gem" width="100%" height="120px"> -->
+      <div>
+        <video width="100%"   controls>
+          <source src="assets/file_example_MP4_640_3MG.mp4" type="video/mp4">
+          
+        Your browser does not support the video tag.
+        </video>
+      </div>
+ 
+      <br>
+      <br>
+      <div>
+        <video width="100%"   controls>
+          <source src="assets/horses_101.webm" type="video/webm">
+          
+        Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>  
+   
+        
+    <div class="col-6 col-s-9 content" style="overflow: hidden;overflow: scroll;width:max-content; font-weight: bold;">
+      <h6>
+        We are GeM & MSME registered, ISO 9001 & BIS (ISI for solar fencing) certified firm engaged in :-
+      </h6>
+      <br>
+      <h6> 
+        Manufacturing of Vermi Compost & Bio - Fertilizer Supplying Various Items to Govt. Dept. such as :
+      </h6>
+        <ul>
+          <li>NPK, Annapurna, Bio - Fertilizer, Chlorpyriphos Insecticide</li>
+          <li>Tree Guard (Agronet, Gabion, Bamboo)</li>
+          <li>Nursery Bag (5x9, 6x10,8x12) & other sizes as per requirement </li>
+          <li>Green Shade Net & Polythene Sheet for Nursery bed</li>
+          <li>Solar Devices (Inverter, Solar Water Pump, Light )</li>
+          <li>Solar Power Fencing</li>
+          <li>Fencing work (Barbed Wire, Chain Link, Wire Mesh, RCC Pole)</li>
+          <li>Torch Light, Search Light, Solar Lantern</li>
+          <li>Solar Home Light System, Street Light</li>
+          <li>Electronic Goods (Trap Camera, Laser Range Finder,
+              Binoculars, GPS Tracker, Mobile Phone, Hooter)</li>
+          <li>Animal Scare Away devices & Bio Acoustics devices</li>
+          <li>Snakes Catching Solutions (HOOK & TONG), Bags, Gloves</li>
+          <li>Fire Fighting Equipment, Uniform, Dress Materials</li>
+          <li>Hi-Tech Nursery(Sprinkler,150/300/500cc poly pot)</li>
+          <li>Honey bee colony and many other Items</li>
+          </ul>
+    </div>
+      
+
+    <div class="col-3 col-s-3 mar-div" style="padding-top:1%;height:100%;align-content:center;margin: 0 auto;display:auto;"> 
+      <marquee  class="marquee" direction = "down" style="align-content: center;padding-left:1%;display: flex;justify-content: flex-start;">
+        <img src="assets/1592899063_6b9HRz_GeM_1.jpg" alt="gem" width="100%" height="120px">
+        <br><br>
+        <img src="assets/msme-micro-small-medium-enterprises-logo-C4068C3A40-seeklogo.com.png" alt="msme" width="90%" height="120px">
+        <br><br>
+        <img src="assets/download.png" alt="iso" width="90%" height="120px">
+        <br><br>
+        <img src="assets/1.jpg" alt="bis" width="90%" height="120px">
+        <br>
+      </marquee>
+    </div>
+  </div>
+
+</body>
+</html>
